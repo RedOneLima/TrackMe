@@ -1,0 +1,137 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivityFragment"
+    android:clickable="false">
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/standing"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance: --.-- miles"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/start"
+        android:id="@+id/start_button"
+        android:clickable="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toStartOf="@+id/imageView" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/stop"
+        android:id="@+id/stop_button"
+        android:layout_alignBottom="@+id/start_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp"
+        android:clickable="true" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/connection_status"
+        android:src="@drawable/no_signal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/acc_display"
+        android:text=""
+        android:alpha="0"
+        android:background="#FFFFFFFF"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/stop_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set GPS Update Frequency"
+        android:id="@+id/freq_button"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/acc_display" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="visible"
+        android:background="@drawable/button_ok"
+        android:id="@+id/set_new_time"
+        android:layout_alignTop="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Freq(seconds)"
+        android:id="@+id/sec_picker_display"
+        android:layout_below="@+id/freq_button"
+        android:layout_toEndOf="@+id/set_new_time" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondsPicker"
+        android:visibility="visible"
+        android:layout_above="@+id/high_speed"
+        android:layout_alignEnd="@+id/imageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By Moving Speed"
+        android:id="@+id/quickselect_text"
+        android:layout_below="@+id/freq_button"
+        android:layout_alignStart="@+id/start_button" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/slow_speed"
+        android:background="@drawable/standing"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toEndOf="@+id/connection_status" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/med_speed"
+        android:background="@drawable/walking"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/slow_speed" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/high_speed"
+        android:background="@drawable/running"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignStart="@+id/med_speed" />
+
+</RelativeLayout>
